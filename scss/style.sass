@@ -1,0 +1,832 @@
+=breakpoint($max-width)
+   @media screen and (max-width: $max-width)
+      @content
+
+$adress-top: 24.4%
+
+#upbutton
+  background: url(../images/up5.png) no-repeat top left
+  height: 60px
+  width: 60px
+  bottom: 30px
+  right: 30px
+  cursor: pointer
+  display: none
+  position: fixed
+  z-index: 999
+
+body
+  margin: 0
+  padding: 0
+  max-width: 1600px
+
+.main-wrapper
+  margin: 0 auto
+   max-width: 1600px
+
+.main
+  position: relative
+  min-height: 800px
+  width: 100%
+  height: 130vh
+  max-height: 1070px
+  background: #9f9acf url(../images/main.png) center top no-repeat
+  background-size: cover
+  text-align: center
+  +breakpoint(480px)
+    min-width: 100%
+  +breakpoint(765px)
+    width: 100%
+  &__title
+    position: absolute
+    margin: auto
+    top: 40%
+    left: 0
+    bottom: 0
+    right: 0
+    z-index: 2
+    h1
+      color: #fefefb
+      font-family: 'Montserrat', sans-serif
+      font-size: 50px
+      font-weight: 700
+      line-height: 60.22px
+      text-transform: uppercase
+      +breakpoint(765px)
+        font-size: 40px
+      +breakpoint(480px)
+        font-size: 35px
+        font-weight: 600
+    span
+      color: #fefdfd
+      font-family: "PT Sans", sans-serif
+      font-size: 25px
+      font-weight: 200
+      font-style: italic
+      +breakpoint(765px)
+        font-size: 20px
+      +breakpoint(480px)
+        font-size: 18px
+
+.main-overlay
+   position: absolute
+   height: 100%
+   width: 100%
+   background-color: rgba(145, 113, 150, 0.3)
+   z-index: 1
+
+.top-nav
+  display: flex
+  justify-content: space-between
+  position: relative
+  padding: 25px 15%
+  z-index: 3
+  &__btn
+    display: none
+    width: 40px
+    height: 40px
+    font-size: 20px
+    background-color: transparent
+    border: none
+    position: absolute
+    right: 15px
+    color: #fff
+    outline: none
+    +breakpoint(765px)
+      display: block
+      margin-right: 30px
+    +breakpoint(480px)
+      display: block
+      margin-top: 10px
+    &:hover
+      cursor: pointer
+  &__btn:focus
+    outline: none
+  &__logo
+    +breakpoint(765px)
+      margin-left: -100px
+    +breakpoint(480px)
+      margin: 0 2%
+    img
+      width: 40px
+      height: 52px
+  &__menu
+    list-style: none
+    display: flex
+    // margin-left: 5%
+    +breakpoint(765px)
+      position: relative
+      flex-direction: column
+      top: 50px
+      // left: 20%
+      width: 180px
+      display: none
+      // margin-left: 200%
+    // & :nth-child(2)
+    //   left: 60px
+    // & :nth-child(3)
+    //   left: 40px
+    // & :nth-child(4)
+    //   left: 20px
+    // & :nth-child(1)
+    //   left: 80px
+    &--active
+      display: flex
+    +breakpoint(480px)
+      position: relative
+      flex-direction: column
+      top: 50px
+      margin-right: 20%
+      width: 170px
+      display: none
+    & :nth-child(2)
+      left: 60px
+    & :nth-child(3)
+      left: 40px
+    & :nth-child(4)
+      left: 20px
+    & :nth-child(1)
+      left: 80px
+    &--active
+      display: flex
+    li
+      +breakpoint(765px)
+        position: relative
+        display: flex
+        justify-content: flex-start
+        margin-right: 0
+      +breakpoint(480px)
+        position: relative
+        display: flex
+        justify-content: flex-start
+        margin-right: 0
+      a
+        text-transform: uppercase
+        padding-right: 30px
+        text-decoration: none
+        color: #fff
+        font-size: 18px
+        font-weight: 500
+        line-height: 60.03px
+        font-family: 'Montserrat', sans-serif
+        +breakpoint(765px)
+          font-size: 16px
+          line-height: 35px
+        +breakpoint(480px)
+          font-size: 14px
+          line-height: 30px
+
+.about-us
+  display: flex
+  flex-direction: row
+  width: 100%
+  max-height: 800px
+  height: 100vh
+  padding: 0 124px
+  margin-top: 125px
+  +breakpoint(480px)
+    padding: 0 0
+    flex-direction: column
+    justify-content: center
+    align-items: center
+  +breakpoint(765px)
+    padding: 0 0
+    flex-direction: column
+    justify-content: center
+    align-items: center
+  img
+    color: #fff
+    width: 55px
+    height: 55px
+    font-size: 50px
+    margin-top: 75px
+    z-index: 3
+  span
+    font-family: 'Montserrat', sans-serif
+    font-size: 36px
+    font-weight: 400
+    line-height: 47.13px
+    text-transform: uppercase
+    color: #fefbfc
+    margin-top: 45px
+    z-index: 5
+
+.about-us__card
+  position: relative
+  width: 100%
+  min-width: 25%
+  height: 90vh
+  max-height: 560px
+  background-color: #000
+  background: #000 url(../images/about-us.png) left center no-repeat
+  background-size: cover
+  text-align: center
+  &__overlay
+    position: absolute
+    height: 100%
+    width: 100%
+    background-color: rgba(100, 100, 100, 0.2)
+    z-index: 1
+  &__info
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-items: center
+    position: relative
+    z-index: 5
+    +breakpoint(480px)
+      width: 100%
+
+.about-us__info
+  display: flex
+  flex-direction: column
+  align-items: center
+  width: 100%
+  min-width: 50%
+  margin-left: 125px
+  margin-top: 77px
+  +breakpoint(765px)
+    margin-left: 0
+    width: 60%
+  +breakpoint(480px)
+    margin-left: 0px
+    width: 75%
+  p
+    font-size: 18px
+    color: #665f60
+    font-family: "PT Sans",sans-serif
+    font-weight: 400
+    font-style: italic
+    text-align: left
+    +breakpoint(480px)
+      font-size: 15px
+      text-align: center
+
+.btn
+  display: inline-block
+  width: 197px
+  height: 50px
+  color: #7d7a7c
+  font-size: 20px
+  font-family: "PT Sans",sans-serif
+  font-style: italic
+  padding: 10px 50px
+  border: 1px solid #7d797b
+  border-radius: 0px
+  margin: 12% 30%
+
+.third-section
+  max-height: 800px
+  height: 100vh
+  padding: 0 15%
+  margin-top: 5%
+  +breakpoint(765px)
+    margin-top: 300px
+  +breakpoint(480px)
+    margin-top: 60%
+
+.wrap-first
+  display: -webkit-flex
+  display: -ms-flex
+  display: flex
+  width: 100%
+  +breakpoint(765px)
+    width: 100%
+    flex-direction: row
+  +breakpoint(480px)
+    flex-direction: column
+
+.card-outer
+  display: flex
+  flex-direction: row
+  width: 100%
+  text-align: center
+  +breakpoint(765px)
+    flex-wrap: wrap
+  +breakpoint(480px)
+    flex-direction: column
+  &__info
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+.card-wrap
+  min-width: 50%
+  max-height: 800px
+  height: 100vh
+  +breakpoint(765px)
+    min-width: 50%
+  +breakpoint(480px)
+    min-width: 100%
+    display: flex
+    flex-direction: column
+
+.card
+  height: 50%
+  overflow: hidden
+  border: none
+  border-radius: 0px
+  +breakpoint(1270px)
+    height: 50%
+  +breakpoint(765px)
+    height: 50%
+  +breakpoint(480px)
+    height: 100%
+    border: #9f9acf 1px solid
+  &--joint
+    background-color: #dbdbdb
+  &--last
+    justify-content: flex-start
+    min-width: 35%
+    max-height: 800px
+    height: 100vh
+    background-color: #9f9acf
+    background-image: url(../images/card-5.png)
+    background-position: -380px
+    background-repeat: no-repeat center center
+    background-size: cover
+    &__overlay
+      position: absolute
+      height: 100%
+      width: 100%
+      background-color: rgba(159, 154, 207, 0.37)
+      z-index: 1
+    &__title
+      color: #fefcfd
+      font-family: "Montserrat",sans-serif
+      font-size: 30px
+      font-weight: 400
+      text-transform: uppercase
+      margin-top: 8%
+      z-index: 2
+    &__descr
+      color: #fefcfd
+      font-family: "PT Sans"
+      font-size: 15px
+      font-style: italic
+      margin-top: 25%
+      z-index: 3
+    &__icon
+      margin-top: 15%
+      z-index: 4
+  &--second, &--third
+    background-color: #fff
+
+.title
+  color: #665f60
+  font-family: "PT Sans", sans-serif
+  font-size: 24px
+  font-weight: 700
+  text-transform: uppercase
+  padding-bottom: 21px
+  padding-top: 30px
+
+.descr
+  color: #665f60
+  font-family: "PT Sans", sans-serif
+  font-size: 18px
+  font-style: italic
+  margin-bottom: 40px
+
+
+.container
+  width: 100%
+  max-width: 1170px
+  min-height: 1000px
+  margin: 0 auto
+
+.works
+  max-height: 1000px
+  min-height: 900px
+  height: 100vh
+  overflow: hidden
+  padding: 0 10%
+  background-color: #9f9acf
+  background-image: url(../images/DeathtoStock_Wired3.png)
+  background-repeat: no-repeat center center
+  background-size: cover
+  +breakpoint(768px)
+    margin-top: 800px
+  +breakpoint(480px)
+    margin-top: 1400px
+
+.works-inner
+  overflow: hidden
+  display: -webkit-flex
+  display: -ms-flex
+  display: flex
+  flex-direction: column
+  &__btn
+    margin: 10% auto
+    width: 195px
+    height: 50px
+    border: 1px solid #fff
+    font-size: 20px
+    color: rgb(255,255,255)
+    font-family: "PT Sans",sans-serif
+    font-style: italic
+    +breakpoint(480px)
+      margin-top: 20%
+
+.works-info
+  margin: 0 auto
+  text-align: center
+  img
+    margin-top: 15%
+  &__title
+    font-size: 27px
+    color: rgb(254,252,253)
+    font-family: "Montserrat",sans-serif
+    font-weight: 600
+    margin-top: 10%
+    +breakpoint(480px)
+      font-size: 20px
+
+.works-slider
+  box-sizing: border-box
+  max-height: 549px
+  max-width: 731px
+  margin: 5% auto
+  &__item
+    overflow: hidden
+    img
+      width: 100%
+  +breakpoint(768px)
+    width: 100%
+    // max-width: 530px
+  +breakpoint(480px)
+    width: 100%
+    // max-width: 100%
+
+.slick-list
+    max-height: 510px
+    height: 51vh
+    overflow: hidden
+    +breakpoint(768px)
+      height: 66vh
+    +breakpoint(480px)
+      height: 100vh
+
+.slick-prev
+  left: -130px
+  width: 35px
+  height: 35px
+
+.slick-next
+  right: -10%
+  width: 35px
+  height: 35px
+
+.slick-arrows
+  width: 38px
+  height: 38px
+  border-radius: 18px
+  background-color: #e5e5e5
+  +breakpoint(768px)
+    display: none
+  +breakpoint(480px)
+    display: none
+
+.slick-prev::before,
+    content: "<"
+    font-size: 40px
+
+.slick-next::before
+  content: ">"
+  font-size: 40px
+
+.slick-dots
+  bottom: -50px
+  +breakpoint(480px)
+    bottom: -15%
+  li
+    button::before
+      opacity: 0.25
+      border-color: #fff
+      color: #ebebeb
+
+#slick-slide-control00::before,
+#slick-slide-control01::before,
+#slick-slide-control02::before,
+#slick-slide-control03::before
+  color: #fff
+  border: #fff 1px solid
+  border-radius: 50%
+
+
+.team
+  display: flex
+  flex-direction: column
+  align-items: center
+  min-height: 790px
+  max-height: 820px
+  height: 100vh
+  background-color: #ebebeb
+  &-logo
+    width: 60px
+    height: 60px
+    margin-top: 56px
+  &-title
+    margin-top: 35px
+    font-size: 36px
+    color: rgb(102,95,96)
+    font-family: "Montserrat",sans-serif
+    font-weight: bold
+    text-align: center
+    text-transform: uppercase
+
+
+.team-slider
+  margin: 70px auto
+  // margin-top: 70px
+  display: flex
+  width: 70%
+  +breakpoint(700px)
+    width: 100%
+  +breakpoint(550px)
+    width: 80%
+
+.team-card
+  width: 30%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  position: relative
+  border-top: 125px solid #ebebeb
+  background-color: #fff
+  &__photo
+    position: absolute
+    left: 50%
+    top: -125px
+    transform: translate(-50%)
+    width: 72%
+    border: 10px solid #ebebeb
+    border-top: none
+    border-radius: 50%
+  &__title
+    margin-top: 45%
+    margin-bottom: 0
+    text-align: center
+    font-size: 24px
+    color: rgb(159,154,207)
+    text-transform: uppercase
+  &__desc
+    margin-top: 30px
+    margin-bottom: 0
+    text-align: center
+    font-size: 24px
+    color: rgb(102,95,96)
+    font-family: "PT Sans", sans-serif
+    font-style: italic
+
+.card-footer
+  display: flex
+  justify-content: center
+  width: 100%
+  // height: 50px
+  background-color: #9f9acf
+  margin-top: 25px
+  &__icon
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 32px
+    height: 32px
+    font-size: 15px
+    border-radius: 16px
+    color: #9f9acf
+    background-color: #ebebeb
+    margin: 0 3%
+    cursor: pointer
+
+.team-slider
+   .slick-slide
+      margin: 0 15px
+
+.slick-prev
+   left: -5%
+   &::before
+      content: url(../images/arrow-left.svg)
+      font-size: 40px
+      +breakpoint(760px)
+        display: none
+      +breakpoint(480px)
+        display: none
+
+.slick-next
+   right: -5%
+   &::before
+      content: url(../images/arrow-right.svg)
+      font-size: 40px
+      +breakpoint(760px)
+        display: none
+      +breakpoint(480px)
+        display: none
+
+.slick-list
+  height: 470px
+
+
+
+
+.touch
+  z-index: 1
+  position: relative
+  max-height: 900px
+  min-height: 700px
+  height: 100vh
+  overflow: hidden
+  background-color: #9f9acf
+  &__logo
+    // margin: 0 auto
+    position: absolute
+    top: 6.6%
+    left: 50%
+    transform: translate(-50%)
+    +breakpoint(480px)
+        top: 2%
+  &__title
+    // margin: 0 auto
+    z-index: 2
+    position: absolute
+    top: 15.6%
+    font-size: 36px
+    color: rgb(255,255,255)
+    text-transform: uppercase
+    text-align: center
+    left: 50%
+    transform: translate(-50%)
+    +breakpoint(480px)
+         top: 9%
+  &__location,
+  &__mobile
+    z-index: 2
+    position: absolute
+    top: 24%
+    right: 0px
+    height: 90px
+    width: 350px
+    max-width: 100%
+    background-color: rgba(235, 235, 235, 0.5)
+  &__mobile
+    top: calc(#{$adress-top} + 90px)
+
+  &-input__name,
+  &-input__email
+    margin-top: -10px
+    box-sizing: border-box
+    width: 46.6%
+    height: 60px
+    border: none
+    border-radius: 3px
+    padding: 0 3%
+    opacity: 0.5
+    font-size: 18px
+    font-family: "PT Sans", sans-serif
+    font-style: italic
+
+  &-input__message
+    box-sizing: border-box
+    z-index: 2
+    position: absolute
+    top: 67%
+    min-width: 53%
+    max-width: 53%
+    min-height: 15%
+    max-height: 15%
+    border: none
+    border-radius: 3px
+    padding: 1.3% 2%
+    opacity: 0.5
+    font-size: 18px
+    font-family: "PT Sans", sans-serif
+    font-style: italic
+    left: 50%
+    transform: translate(-50%)
+    +breakpoint(760px)
+      min-width: 75%
+      max-width: 75%
+
+    +breakpoint(480px)
+      min-width: 100%
+      max-width: 100%
+
+  &__btn
+    z-index: 2
+    position: absolute
+    left: 50%
+    transform: translate(-50%)
+    top: 86.6%
+    height: 70px
+    border: none
+    border-bottom: 4px solid #8783b0
+    border-radius: 2px
+    font-size: 20px
+    color: rgb(255,255,255)
+    text-transform: uppercase
+    background-color: #9f9acf
+    cursor: pointer
+
+@keyframes slide-adress-mobile
+   from
+      right: -260px
+   to
+      right: 0
+
+.icon__descr, .location__descr
+  display: flex
+  justify-content: center
+  align-items: center
+  text-align: center
+
+.location,
+.mobile
+  display: flex
+  flex-direction: row
+  right: -260px
+  &__icon
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 90px
+    background-color: #9f9acf
+    cursor: pointer
+  &:hover
+      animation-name: slide-adress-mobile
+      animation-duration: 0.5s
+      animation-timing-function: ease-in-out
+      animation-fill-mode: both
+
+.map-inner
+  z-index: 1
+  max-height: 900px
+  min-height: 700px
+  height: 100vh
+  opacity: 0.5
+
+.touch-input
+  z-index: 2
+  display: flex
+  justify-content: space-between
+  position: relative
+  top: -44.4%
+  left: 50% - 26.5%
+  width: 53%
+  +breakpoint(760px)
+    width: 75%
+    left: 50% - 37.5%
+
+  +breakpoint(480px)
+    width: 100%
+    left: 0
+
+
+
+
+
+.footer
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 0 15%
+  min-height: 190px
+  max-height: 200px
+  height: 19vh
+  width: 100%
+  background-color: #9f9acf
+  +breakpoint(768px)
+    // display: none
+  +breakpoint(480px)
+    padding: 0
+    flex-direction: column
+    justify-content: center
+  &-links
+    display: flex
+    +breakpoint(480px)
+      justify-content: center
+  &__icon
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 32px
+    min-width: 32px
+    height: 32px
+    font-size: 15px
+    border-radius: 16px
+    color: #9f9acf
+    background-color: #ebebeb
+    margin: 0 3%
+    cursor: pointer
+
+.footer-info
+  p
+    font-size: 18px
+    color: #fff
+    font-family: "PT Sans"
+
+
+
+
+@import "_media.sass"
